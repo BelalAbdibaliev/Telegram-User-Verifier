@@ -1,0 +1,16 @@
+﻿name: anti-bot
+services:
+  db:
+    image: postgres:latest
+    container_name: anti-bot-postgres
+    environment:
+      POSTGRES_USER: sunday
+      POSTGRES_PASSWORD: sunday
+      POSTGRES_DB: anti-bot-db
+    ports:
+      - "6666:5432"
+    volumes:
+      - ./docker-data/postgres:/var/lib/postgres
+
+volumes:
+  postgres_data:
